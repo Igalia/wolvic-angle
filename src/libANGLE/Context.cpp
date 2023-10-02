@@ -4025,7 +4025,8 @@ void Context::initCaps()
 
     if (mWebGLContext && getLimitations().limitWebglMaxTextureSizeTo4096)
     {
-        constexpr GLint kMaxTextureSize = 4096;
+        // TODO(wolvic-chromium): VR experiences are over 4k.
+        constexpr GLint kMaxTextureSize = 16384;
         ANGLE_LIMIT_CAP(mState.mCaps.max2DTextureSize, kMaxTextureSize);
         ANGLE_LIMIT_CAP(mState.mCaps.max3DTextureSize, kMaxTextureSize);
         ANGLE_LIMIT_CAP(mState.mCaps.maxCubeMapTextureSize, kMaxTextureSize);
