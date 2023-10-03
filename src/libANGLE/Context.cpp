@@ -4004,7 +4004,7 @@ void Context::initCaps()
 
     if (mWebGLContext && getLimitations().limitWebglMaxTextureSizeTo4096)
     {
-        constexpr GLint kMaxTextureSize = 4096;
+        constexpr GLint kMaxTextureSize = 16384;
         ANGLE_LIMIT_CAP(caps->max2DTextureSize, kMaxTextureSize);
         ANGLE_LIMIT_CAP(caps->max3DTextureSize, kMaxTextureSize);
         ANGLE_LIMIT_CAP(caps->maxCubeMapTextureSize, kMaxTextureSize);
