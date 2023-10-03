@@ -771,6 +771,9 @@ void GenerateCaps(const FunctionsGL *functions,
         caps->maxElementIndex = static_cast<GLint64>(std::numeric_limits<unsigned int>::max());
     }
 
+#ifdef WOLVIC
+    limitations->webGLTextureSizeLimit = 16384;
+#else
     if (features.limitWebglMaxTextureSizeTo4096.enabled)
     {
         limitations->webGLTextureSizeLimit = 4096;
@@ -779,6 +782,7 @@ void GenerateCaps(const FunctionsGL *functions,
     {
         limitations->webGLTextureSizeLimit = 8192;
     }
+#endif
 
     GLint max3dArrayTextureSizeLimit = std::numeric_limits<GLint>::max();
     if (features.limitMax3dArrayTextureSizeTo1024.enabled)
