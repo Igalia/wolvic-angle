@@ -161,6 +161,8 @@ config("internal_config") {
 
   defines = []
 
+  defines += [ "WOLVIC" ]
+
   if (is_win) {
     defines += [ "ANGLE_IS_WIN" ]
     if (angle_is_winuwp) {
